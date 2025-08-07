@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: django-taskmanager
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn TaskManager.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: TaskManager.settings
+      - key: SECRET_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
