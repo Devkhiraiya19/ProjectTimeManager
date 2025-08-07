@@ -28,3 +28,4 @@ env/
 # Media/static cache
 staticfiles/
 media/
+credentials/credentials.json
